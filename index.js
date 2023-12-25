@@ -14,12 +14,13 @@ const PORT = process.env.PORT || 4000;
 
 //definir pagina principal
 app.get("/", (req, res) => {
-  res.send("hola mundo");
+  res.send("Servidor iniciado");
 });
 
 //importar rutas
-app.use("/api/usuarios", require("./router/usuarios"));
 app.use("/api/auth", require("./router/auth"));
+app.use("/api/usuarios", require("./router/usuarios"));
+app.use("/api/proyectos", require("./router/proyecto"));
 
 //arrancar la app
 app.listen(PORT, () => {
