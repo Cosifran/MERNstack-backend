@@ -32,7 +32,9 @@ exports.autenticarUsuario = async (req, res) => {
     //si todo es correcto se crea y se firma el JWT
 
     const payload = {
-      id: usuario.id,
+      usuario: {
+        id: usuario.id,
+      }
     };
 
     jwt.sign(

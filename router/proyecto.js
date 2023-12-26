@@ -1,10 +1,14 @@
 const express = require("express");
-//Import controller
-const proyectoController = require("../controller/proyectoController");
 //ruta para crear proyectos
 const router = express.Router();
+//Import controller
+const proyectoController = require("../controller/proyectoController");
+//import middleware
+const auth = require("../middleware/auth");
 
 //api/proyecto
-router.post("/", proyectoController.crearProyecto);
+router.post("/", auth, proyectoController.crearProyecto);
+
+router.get("/", auth, proyectoController.crearProyecto);
 
 module.exports = router;
