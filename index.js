@@ -21,6 +21,7 @@ app.get("/", (req, res) => {
 app.use("/api/auth", require("./router/auth"));
 app.use("/api/usuarios", require("./router/usuarios"));
 app.use("/api/proyectos", require("./router/proyecto"));
+app.use("/api/tareas", require("./router/tareas"));
 
 //arrancar la app
 app.listen(PORT, () => {
